@@ -4,7 +4,6 @@ from numpy.random import normal
 from scipy.spatial.distance import cdist
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
-from plot_axis_range import plot_axis_range
 
 
 def generate_well_separated_clusters(num_clusters, cluster_size, data_dim) :
@@ -54,13 +53,13 @@ if __name__ == '__main__' :
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
     # List of possible (i) number of clusters (ii) data dimensions
-    list_num_clusters = [2, 4, 6, 8, 10]
-    list_data_dim = [2, 4, 6, 8, 10]
+    list_num_clusters = [2, 10, 20, 35, 50]
+    list_data_dim = [2, 10, 20, 35, 50]
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
     if not os.path.exists(directory):
         os.makedirs(directory)
-    for iter1 in range(50) :
+    for iter1 in range(30) :
         # Set up a directory to write the generated data, and the info file
         if not os.path.exists(directory+'/'+directory+'_'+str(iter1)):
             os.makedirs(directory+'/'+directory+'_'+str(iter1))
@@ -82,6 +81,7 @@ if __name__ == '__main__' :
                     '/data_'+str(count)+'.txt', data)
                 # Plot data set. Project to 2D using PCA if num of dimensions
                 # is not 2
+                '''
                 if data.shape[1] == 2+1 :
                     plt.scatter(data[:,0], data[:,1], marker='x', c='b')
                     plot_axis_range(data[:,0:-1])
@@ -92,5 +92,6 @@ if __name__ == '__main__' :
                 plt.savefig(directory+'/'+directory+'_'+str(iter1)+ \
                     '/data_'+str(count)+'.png', dpi=60)
                 plt.close()
+                '''
                 count += 1
         fw.close()

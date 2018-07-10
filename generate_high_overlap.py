@@ -6,7 +6,6 @@ from sklearn.decomposition import PCA
 import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
-from plot_axis_range import plot_axis_range
 # high:
 # if min_dist.min() >= 2 and min_dist.min() < 3  :
 
@@ -80,7 +79,7 @@ if __name__ == '__main__':
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
     # List of possible (i) number of clusters (ii) data dimensions
-    list_num_clusters = [5, 10, 25, 50, 100]
+    list_num_clusters = [5, 10, 20, 35, 50]
     list_data_dim = [2]
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -106,7 +105,7 @@ if __name__ == '__main__':
                 # Get generated data set
                 data, num_well_separated_clusters = \
                     generate_high_overlap(num_clusters=num_clusters, \
-                    cluster_size=200, data_dim=data_dim)
+                    cluster_size=100, data_dim=data_dim)
                 print(data.shape)
 
                 # Save data set
@@ -115,12 +114,14 @@ if __name__ == '__main__':
                 fw2.write(str(num_well_separated_clusters)+'\n')
 
                 # Plot data set.
+                '''
                 plt.figure()
                 plt.scatter(data[:,0], data[:,1], marker='x', c='k')
                 plot_axis_range(data[:,0:-1])
                 plt.savefig(directory+'/'+directory+'_'+str(iter1)+ \
                     '/data_'+str(count)+'.png', dpi=60)
                 plt.close()
+                '''
 
                 count += 1
         fw.close()

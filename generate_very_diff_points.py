@@ -4,14 +4,13 @@ from numpy.random import normal
 from scipy.spatial.distance import cdist
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
-from plot_axis_range import plot_axis_range
 
 
 def generate_very_diff_points(num_clusters, cluster_size, data_dim):
     # The vector of cluster centers for the synthetic data
     mean_vector = np.zeros((num_clusters, data_dim))
     # Possible values for the number of points in a cluster
-    list_cluster_size = [200, 175, 150, 125]
+    list_cluster_size = [100, 125, 150, 175]
     # Generate first cluster center
     mean_vector[0,:] = \
         np.random.uniform(low=0,high=10*num_clusters,size=(1,data_dim))
@@ -58,8 +57,8 @@ if __name__ == '__main__':
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
     # List of possible (i) number of clusters (ii) data dimensions
-    list_num_clusters = [2, 10, 25, 50, 100]
-    list_data_dim = [2, 10, 25, 50, 100]
+    list_num_clusters = [2, 10, 20, 35, 50]
+    list_data_dim = [2, 10, 20, 35, 50]
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~ #
     if not os.path.exists(directory):
@@ -80,13 +79,14 @@ if __name__ == '__main__':
                 # Get generated data set
                 data = \
                     generate_very_diff_points(num_clusters=num_clusters, \
-                    cluster_size=200, data_dim=data_dim)
+                    cluster_size=100, data_dim=data_dim)
                 print(data.shape)
                 # Save data set
                 np.savetxt(directory+'/'+directory+'_'+str(iter1)+ \
                     '/data_'+str(count)+'.txt', data)
                 # Plot data set. Project to 2D using PCA if num of dimensions
                 # is not 2
+                '''
                 if data.shape[1] == 2+1 :
                     plt.scatter(data[:,0], data[:,1], marker='x', c='b')
                     plot_axis_range(data[:,0:-1])
@@ -98,5 +98,6 @@ if __name__ == '__main__':
                 plt.savefig(directory+'/'+directory+'_'+str(iter1)+ \
                     '/data_'+str(count)+'.png', dpi=60)
                 plt.close()
+                '''
                 count += 1
         fw.close()
