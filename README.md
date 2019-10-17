@@ -6,22 +6,22 @@ Paper Source: [Gupta A., Datta S., Das S., "Fast automatic estimation of the
 number of clusters from the minimum inter-center distance for k-means
 clustering", Pattern Recognition Letters, vol. 116, pp. 72-79, 2018.](https://www.sciencedirect.com/science/article/pii/S0167865518305579)
 
-* The Last Leap prefers identification of separate clusters.
+##* The Last Leap prefers identification of separate clusters.
 
 ![last_leap_example](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/diff_scale_ll.png)
 
-* The Last Major Leap prefers identification of equal-sized clusters.
+##* The Last Major Leap prefers identification of equal-sized clusters.
 
 ![last_major_leap_example](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/diff_scale_lml.png)
 
 
-A comparison of the performance of both methods -
+##A comparison of the performance of both methods -
 
-* The Last Leap -
+###* The Last Leap -
 
 ![last_leap_performance](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/last_leap.png)
 
-* The Last Major Leap
+###* The Last Major Leap
 
 ![last_major_leap_performance](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/last_major_leap.png)
 
