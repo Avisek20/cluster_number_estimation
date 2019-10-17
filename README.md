@@ -19,7 +19,7 @@ A comparison of the performance of both methods -
 
 * The Last Leap -
 
-![last_leap_performance](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/last_leap.png | width=100)
+![last_leap_performance](https://raw.githubusercontent.com/Avisek20/cluster_number_estimation/master/imgs/last_leap.png)
 
 * The Last Major Leap
 
