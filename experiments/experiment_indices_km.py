@@ -53,7 +53,7 @@ indices = [
 
 output_dir = 'output/'
 
-data_path = '/home/arka/avisek/re_experiment2/datasets/'
+data_path = './'
 data_dirs = ['data_well_separated', 'data_diff_spread',
     'data_slightly_diff_points', 'data_very_diff_points',
     'data_slight_overlap2', 'data_high_overlap2']

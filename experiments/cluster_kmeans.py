@@ -5,15 +5,14 @@ from sklearn.cluster import KMeans
 
 if __name__ == '__main__':
     # ~~~~~~~~~~~~~~~~~~~~~~~ #
-    data_dir_path = '/home/arka/avisek/re_experiment2/datasets/'
-    directory = [#'data_well_separated', 'data_diff_spread',
+    data_dir_path = './'
+    directory = ['data_well_separated', 'data_diff_spread',
         'data_slightly_diff_points', 'data_very_diff_points',
         'data_slight_overlap2', 'data_high_overlap2']
-    n_sets = [#30, 30,
-    30, 30, 30, 30]
-    n_datasets_in_sets = [#25, 25,
-    25, 25, 5, 5]
+    n_sets = [30, 30, 30, 30, 30, 30]
+    n_datasets_in_sets = [25, 25, 25, 25, 5, 5]
     # ~~~~~~~~~~~~~~~~~~~~~~~ #
+    
     for dir, ns, nds in zip(directory, n_sets, n_datasets_in_sets):
         cluster_results_directory = 'kmeans_cluster_'+dir
         if not os.path.exists(cluster_results_directory):
